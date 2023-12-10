@@ -64,7 +64,6 @@ lib.overrideDerivation (buildLinux (args // {
   '' + lib.optionalString (lib.elem stdenv.hostPlatform.system ["armv7l-linux" "aarch64-linux"]) ''
     copyDTB bcm2710-rpi-zero-2.dtb bcm2837-rpi-zero-2.dtb
     copyDTB bcm2710-rpi-zero-2-w.dtb bcm2837-rpi-zero-2-w.dtb
-    copyDTB bcm2710-rpi-3-b.dtb bcm2837-rpi-zero-2-w.dtb
     copyDTB bcm2710-rpi-3-b.dtb bcm2837-rpi-3-b.dtb
     copyDTB bcm2710-rpi-3-b-plus.dtb bcm2837-rpi-3-a-plus.dtb
     copyDTB bcm2710-rpi-3-b-plus.dtb bcm2837-rpi-3-b-plus.dtb
