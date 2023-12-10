@@ -13,7 +13,7 @@ lib.overrideDerivation (buildLinux (args // {
     owner = "raspberrypi";
     repo = "linux";
     rev = tag;
-    hash = "sha256-ILwecHZ1BN6GhZAUB6/UwiN/rZ8gHndKON6DUhidtxI=";
+    hash = "00000000000000000000000000000";
   };
 
   defconfig = {
@@ -21,6 +21,7 @@ lib.overrideDerivation (buildLinux (args // {
     "2" = "bcm2709_defconfig";
     "3" = if stdenv.hostPlatform.isAarch64 then "bcmrpi3_defconfig" else "bcm2709_defconfig";
     "4" = "bcm2711_defconfig";
+    "Z2W" = "bcm2711_defconfig";
   }.${toString rpiVersion};
 
   features = {
