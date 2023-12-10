@@ -96,6 +96,10 @@ in {
       rpiVersion = 4;
     };
 
+    linux_rpiz = callPackage ../os-specific/linux/kernel/linux-rpi-z.nix {
+    };
+
+
     linux_4_19 = callPackage ../os-specific/linux/kernel/mainline.nix {
       branch = "4.19";
       kernelPatches =
