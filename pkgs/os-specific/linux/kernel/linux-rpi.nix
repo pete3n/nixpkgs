@@ -2,8 +2,8 @@
 
 let
   # NOTE: raspberrypifw & raspberryPiWirelessFirmware should be updated with this
-  modDirVersion = "6.1.65";
-  tag = "3d9d7e7";
+  modDirVersion = "6.1.21";
+  tag = "1.20230405";
 in
 lib.overrideDerivation (buildLinux (args // {
   version = "${modDirVersion}-${tag}";
@@ -13,7 +13,7 @@ lib.overrideDerivation (buildLinux (args // {
     owner = "raspberrypi";
     repo = "linux";
     rev = tag;
-    hash = "00000000000000000000000000000";
+    hash = "sha256-ILwecHZ1BN6GhZAUB6/UwiN/rZ8gHndKON6DUhidtxI=";
   };
 
   defconfig = {
@@ -21,7 +21,6 @@ lib.overrideDerivation (buildLinux (args // {
     "2" = "bcm2709_defconfig";
     "3" = if stdenv.hostPlatform.isAarch64 then "bcmrpi3_defconfig" else "bcm2709_defconfig";
     "4" = "bcm2711_defconfig";
-    "5" = "bcm2711_defconfig";
   }.${toString rpiVersion};
 
   features = {
